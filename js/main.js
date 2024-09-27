@@ -3,6 +3,9 @@ import { getData, sendData } from './api.js';
 import { showAlert } from './util.js';
 import { setOnFormSubmit, hideModal } from './form.js';
 import { showSuccessMessage, showErrorMessage } from './message.js';
+import './preload.js';
+
+
 
 const onSendDataSuccess = () => {
   hideModal();
@@ -13,8 +16,12 @@ const onSendDataError = () => {
   showErrorMessage();
 };
 
+
 setOnFormSubmit(async (data) => {
   await sendData(onSendDataSuccess, onSendDataError, data);
 });
 
+
+
 getData(renderPictures, showAlert);
+
