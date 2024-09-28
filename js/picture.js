@@ -15,13 +15,15 @@ const createPicture = (data) => {
   picture.querySelector('.picture__likes').textContent = likes;
 
   picture.addEventListener('click', () => {
-    showBigPicture(data);
+    showBigPicture(data)
+
   });
 
   return picture;
 };
 
 const renderPictures = (pictures) => {
+  container.querySelectorAll('.picture').forEach((element) => element.remove());
   const fragment = document.createDocumentFragment();
   pictures.forEach((picture) => {
     const pictureElement = createPicture(picture);

@@ -41,6 +41,8 @@ const renderComments = () => {
   commentList.innerHTML = '';
   commentList.append(fragment);
   commentCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}</span> комментариев`;
+
+
 };
 
 const hideBigPicture = () => {
@@ -81,9 +83,13 @@ const showBigPicture = (data) => {
   if (comments.length > 0) {
     renderComments();
   }
+
 };
+
+
 
 cancelButton.addEventListener('click', onCancelButtonClick);
 commentsLoader.addEventListener('click', onCommentsLoaderClick);
+
 
 export { showBigPicture };
